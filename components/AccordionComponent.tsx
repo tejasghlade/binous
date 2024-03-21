@@ -135,7 +135,7 @@ function AccordionComponent() {
                 className="hs-accordion-toggle group pb-3 inline-flex items-center justify-between gap-x-3 w-full md:text-lg font-semibold text-start text-gray-800 rounded-lg transition hover:text-gray-500 dark:text-gray-200 dark:hover:text-gray-400 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
                 aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-three"
               >
-                How does Preline's pricing work?
+                How does Preline pricing work?
                 <svg
                   className="hs-accordion-active:hidden block flex-shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-gray-400"
                   xmlns="http://www.w3.org/2000/svg"
@@ -270,10 +270,10 @@ function AccordionComponent() {
                 aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-five"
               >
                 <p className="text-gray-600 dark:text-gray-400">
-                  If you lose the link for a theme you purchased, don't panic!
-                  We've got you covered. You can login to your account, tap your
+                  If you lose the link for a theme you purchased, dont panic!
+                  Weve got you covered. You can login to your account, tap your
                   avatar in the upper right corner, and tap Purchases. If you
-                  didn't create a login or can't remember the information, you can
+                  didnt create a login or cant remember the information, you can
                   use our handy Redownload page, just remember to use the same
                   email you originally made your purchases with.
                 </p>

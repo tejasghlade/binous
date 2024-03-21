@@ -11,7 +11,7 @@ const ContactForm = () => {
               Contact us
             </h1>
             <p className="mt-1 text-gray-600 dark:text-gray-400">
-              We'd love to talk about how we can help you.
+              We had love to talk about how we can help you.
             </p>
           </div>
           <div className="mt-12 grid items-center lg:grid-cols-2 gap-6 lg:gap-16">
@@ -106,7 +106,7 @@ const ContactForm = () => {
                 </div>
                 <div className="mt-3 text-center">
                   <p className="text-sm text-gray-500">
-                    We'll get back to you in 1-2 business days.
+                    We will get back to you in 1-2 business days.
                   </p>
                 </div>
               </form>
@@ -136,7 +136,7 @@ const ContactForm = () => {
                     Knowledgebase
                   </h3>
                   <p className="mt-1 text-sm text-gray-500">
-                    We're here to help with any questions or code.
+                    We are here to help with any questions or code.
                   </p>
                   <a
                     className="mt-2 inline-flex items-center gap-x-2 text-sm font-medium text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
