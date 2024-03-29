@@ -44,7 +44,7 @@ const AboutHero = () => {
           {/* End Title */}
           <div className="max-w-3xl text-center mx-auto">
             <p className="text-lg text-gray-400">
-              Preline is a large open-source project, crafted with Tailwind CSS
+              Bionis is a company which repairs our health equipments, crafted with Tailwind CSS
               framework by Hmlstream.
             </p>
           </div>

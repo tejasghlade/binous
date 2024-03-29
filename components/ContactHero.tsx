@@ -42,8 +42,7 @@ const ContactHero = () => {
           {/* End Title */}
           <div className="max-w-3xl text-center mx-auto">
             <p className="text-lg text-gray-400">
-              Preline is a large open-source project, crafted with Tailwind CSS
-              framework by Hmlstream.
+            Bionis is a company that specializes in repairing medical equipment. Our team of experts is dedicated to ensuring that your health equipment is in optimal condition. We use the latest technologies and techniques to provide high-quality repairs. Trust Bionis to keep your medical equipment functioning at its best.
             </p>
           </div>
           {/* Buttons */}
