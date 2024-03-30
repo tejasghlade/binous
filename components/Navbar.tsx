@@ -15,6 +15,10 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { Button } from "./ui/button";
+import SimpleProductSection from "./SimpleProductSection";
+import { MoveRightIcon, Settings2Icon } from "lucide-react";
+import Image from "next/image";
+import { productList } from "@/constants";
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -58,7 +62,7 @@ export function Navbar() {
   return (
     <nav className="flex items-center justify-between flex-wrap  p-6">
       <div className="flex items-center flex-shrink-0  mr-6">
-        <span className="font-semibold text-xl tracking-tight"> binous</span>
+        <span className="font-semibold text-3xl tracking-tight"> binous.</span>
       </div>
 
       <NavigationMenu>
@@ -70,17 +74,81 @@ export function Navbar() {
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
+         
+          <NavigationMenuItem >
+            <NavigationMenuTrigger>Products</NavigationMenuTrigger>
+            <NavigationMenuContent  className="items-center">
+              <div className="w-[900px] flex gap-8 p-5 rounded-2xl">
+                <div className="flex gap-5 flex-col">
+                  <Image
+                    src={"/assets/settings.png"}
+                    width={50}
+                    height={50}
+                    alt={""}
+                  />
+                  <h1 className=" text-2xl">
+                    What can we help you with today?
+                  </h1>
+                  <p className="text-sm text-gray-600">
+                    We'll your broken tech fast-with or without a protection
+                    plan
+                  </p>
+                  <Link
+                    className="flex gap-2 text-purple-700 underline"
+                    href="/products"
+                    passHref
+                  >
+                    Get started
+                    <MoveRightIcon className="fill-purple-700" />
+                  </Link>
+                </div>
+
+                <div>
+                  <div className="grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 ">
+                    {
+                      // Add a grid item here
+                      productList.slice(0, 5).map((product) => (
+                        <div
+                          key={product.id}
+                          className="flex flex-col gap-2 bg-gray-50 hover:bg-gray-100 border-gray-200 rounded-2xl items-center text-center  p-5  border-2 "
+                        >
+                          <div>
+                            <Image
+                              width={70}
+                              height={70}
+                              src="/assets/products/product.png"
+                              alt="Product Image"
+                            />
+                          </div>
+                          <div>
+                            <h2 className="font-bold hover:underline cursor-pointer">
+                              {product.name}
+                            </h2>
+                            <p className="font-light text-gray-600">
+                              {product.subtitle}
+                            </p>
+                          </div>
+                        </div>
+                      ))
+                    }
+
+                    <div className="flex flex-col gap-2 bg-gray-50 hover:bg-gray-100 border-gray-200 rounded-2xl items-center text-center  p-5  border-2 ">
+                      <div className="border-2 border-black rounded-full p-2">
+                        <MoveRightIcon />
+                      </div>
+                      <h2>All repair options</h2>
+                    </div>
+
+                    {/* Add more grid items here */}
+                  </div>
+                </div>
+              </div>
+            </NavigationMenuContent>
+          </NavigationMenuItem>
           <NavigationMenuItem>
             <Link href="/about" legacyBehavior passHref>
               <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                 About
-              </NavigationMenuLink>
-            </Link>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <Link href="/products" legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                Products
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
@@ -91,61 +159,13 @@ export function Navbar() {
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
-          <NavigationMenuItem className="bg-transparent">
-            <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-                <li className="row-span-3">
-                  <NavigationMenuLink asChild>
-                    <a
-                      className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                      href="/"
-                    >
-                      {/* <Icons.logo className="h-6 w-6" /> */}
-                      <div className="mb-2 mt-4 text-lg font-medium">
-                        shadcn/ui
-                      </div>
-                      <p className="text-sm leading-tight text-muted-foreground">
-                        Beautifully designed components built with Radix UI and
-                        Tailwind CSS.
-                      </p>
-                    </a>
-                  </NavigationMenuLink>
-                </li>
-                <ListItem href="/docs" title="Introduction">
-                  Re-usable components built using Radix UI and Tailwind CSS.
-                </ListItem>
-                <ListItem href="/docs/installation" title="Installation">
-                  How to install dependencies and structure your app.
-                </ListItem>
-                <ListItem href="/docs/primitives/typography" title="Typography">
-                  Styles for headings, paragraphs, lists...etc
-                </ListItem>
-              </ul>
-            </NavigationMenuContent>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <NavigationMenuTrigger>Components</NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                {components.map((component) => (
-                  <ListItem
-                    key={component.title}
-                    title={component.title}
-                    href={component.href}
-                  >
-                    {component.description}
-                  </ListItem>
-                ))}
-              </ul>
-            </NavigationMenuContent>
-          </NavigationMenuItem>
-          
         </NavigationMenuList>
       </NavigationMenu>
-      <div>
-      <Button size={"lg"} className="rounded-full" >Contact Us</Button>
-      </div>
+      <Link href={'contact'}>
+        <Button  size={"lg"} className="rounded-full">
+          Contact Us
+        </Button>
+      </Link>
     </nav>
   );
 }

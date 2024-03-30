@@ -1,11 +1,16 @@
+"use client";
+
 import AboutHero from "@/components/AboutHero";
 import { Separator } from "@/components/ui/separator";
 import { productList } from "@/constants";
+import { Calendar, Check, Contact2Icon, MapPin } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 
 const page = () => {
+  const [active, setActive] = useState(1);
+
   return (
     <div className="mx-32 py-10 lg:py-14">
       {/* Title */}
@@ -19,14 +24,17 @@ const page = () => {
           repair services below
         </p>
       </div>
-      {/* End Title */}
+
       <Separator className="my-4" />
       <div className="grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-5 xl:grid-cols-5">
         <div className="grid col-span-3 grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-5 xl:grid-cols-4">
           {productList.map((product) => (
             <div
               key={product.id}
-              className="flex flex-col gap-2 bg-gray-50 hover:bg-gray-100 border-gray-200 rounded-2xl items-center text-center p-5 border-2"
+              className={`flex flex-col gap-2 bg-gray-50 hover:bg-gray-100 border-gray-200 rounded-2xl items-center text-center p-5 border-2 ${
+                active === product.id ? "border-blue-500 shadow-lg " : ""
+              }`}
+              onClick={() => setActive(product.id)}
             >
               <div>
                 <Image
@@ -50,28 +58,79 @@ const page = () => {
         </div>
 
         <div className="col-span-2 border-2 p-5 rounded-2xl">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero
-          aperiam ducimus adipisci, quisquam odit quas? Dolorem veniam saepe
-          nemo, impedit earum iste optio voluptatem sint alias temporibus
-          tenetur, amet sit enim porro inventore voluptates a nostrum quisquam
-          consequatur odio. Asperiores sequi eum nam suscipit velit neque
-          corrupti itaque doloribus dolore, ex corporis praesentium cupiditate,
-          optio maxime. Fuga veniam itaque non mollitia in reprehenderit ex vero
-          ipsum sit, facilis totam eos officia quas! Quam quaerat tenetur magnam
-          maxime, repudiandae assumenda itaque natus a neque architecto fuga,
-          eius ullam? Veritatis deleniti consequatur est totam laboriosam optio
-          accusamus quod voluptas. Iusto a quam dolorum veritatis pariatur totam
-          obcaecati facilis quas officia laborum eos rerum ipsum alias
-          asperiores illo, cupiditate voluptatem quibusdam tempore, ea quidem
-          mollitia cumque quo? Iure rem fugiat rerum enim id animi officiis ex
-          nam! Excepturi commodi asperiores officia facilis ipsum dolor tenetur
-          fugit magni ad id cupiditate nobis aspernatur beatae amet, omnis nihil
-          exercitationem doloribus voluptas ducimus aliquam veritatis?
-          Repudiandae incidunt deserunt culpa est, nemo alias dolorum sapiente
-          harum consequuntur reiciendis fuga perspiciatis unde ducimus veniam at
-          dolor vitae earum odit cupiditate provident quos esse expedita.
-          Corporis quo repudiandae nulla sint est? Et reprehenderit nulla
-          suscipit facere, expedita eius illo?
+          <div className="flex flex-col gap-3">
+            <h1 className="text-xl font-bold">Summary</h1>
+            <div className="flex gap-5 items-center ">
+              <Image
+                className="bg-gray-200 p-3 rounded-3xl"
+                src="/assets/products/product.png"
+                width={200}
+                height={200}
+                alt="Product Image"
+              />
+              <div className="flex flex-col">
+                <h3 className="font-bold">Device repair</h3>
+                <p>Fast , affordable , reliable</p>
+              </div>
+            </div>
+          </div>
+          <Separator className="my-4" />
+
+          <div className="flex flex-col gap-3">
+            <h1 className="text-xl font-bold">Product Detail</h1>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Voluptates similique cupiditate amet voluptas, illum, voluptatum
+              ullam nulla, aspernatur repellendus porro aliquid reprehenderit
+              numquam temporibus possimus soluta ipsum quidem debitis modi eius
+            </p>
+          </div>
+
+          <Separator className="my-4" />
+
+          <div className="flex flex-col gap-3">
+            <h1 className="text-xl font-bold">Visit Detail</h1>
+            <div className="flex  gap-3">
+              <div className="flex gap-2 items-center ">
+                <span className="p-3 rounded-full bg-gray-100">
+                  <MapPin size={18} />
+                </span>
+                <p className="text-sm">Store Location</p>
+              </div>
+              <div className="flex gap-2 items-center">
+                <span className="p-3 rounded-full bg-gray-100">
+                  <Calendar size={15} />
+                </span>
+                <p className="text-sm">Date and time</p>
+              </div>
+              <div className="flex gap-2 items-center">
+                <span className="p-3 rounded-full bg-gray-100">
+                  <Contact2Icon size={15} />
+                </span>
+                <p className="text-sm">Contact details</p>
+              </div>
+            </div>
+          </div>
+
+          <Separator className="my-4" />
+
+          <div className="flex flex-col gap-3">
+            <h1 className="text-xl font-bold">About our repairs</h1>
+            <div className="flex flex-col gap-3">
+              <div className="flex gap-2 items-center">
+                <Check size={15} /> 1-year warranty
+              </div>
+              <div className="flex gap-2 items-center">
+                <Check size={15} /> Feat turnaround
+              </div>
+              <div className="flex gap-2 items-center">
+                <Check size={15} /> Feee diagnostics
+              </div>
+              <div className="flex gap-2 items-center">
+                <Check size={15} /> Price match gurantee
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Add more grid items here */}
