@@ -45,12 +45,9 @@ const Products = () => {
                 />
               </div>
               <div>
-                <Link
-                  href={`products/${product?.id}`}
-                  className="font-bold hover:underline cursor-pointer"
-                >
+                <h1 className="font-bold hover:underline cursor-pointer">
                   {product.name}
-                </Link>
+                </h1>
                 <p className="font-light text-gray-600">{product.subtitle}</p>
               </div>
             </div>

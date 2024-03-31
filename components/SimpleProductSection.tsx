@@ -1,5 +1,7 @@
 import { productList } from "@/constants";
+import { MoveRightIcon } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const SimpleProductSection: React.FC = () => {
@@ -21,7 +23,7 @@ const SimpleProductSection: React.FC = () => {
       <div className="grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 ">
         {
           // Add a grid item here
-          productList.map((product) => (
+          productList.slice(0, 11).map((product) => (
             <div
               key={product.id}
               className="flex flex-col gap-2 bg-gray-50 hover:bg-gray-100 border-gray-200 rounded-2xl items-center text-center  p-5  border-2 "
@@ -41,6 +43,13 @@ const SimpleProductSection: React.FC = () => {
             </div>
           ))
         }
+
+<div  className=" flex-col gap-2 flex justify-center items-center bg-gray-50 hover:bg-gray-100 border-gray-200 rounded-2xl items-center text-center  p-5  border-2 ">
+                      <Link href={'/products'} className="border-2 border-black rounded-full p-2">
+                        <MoveRightIcon className="fill-black hover:fill-purple-700" />
+                      </Link>
+                      <h2>All repair options</h2>
+                    </div>
 
         {/* Add more grid items here */}
       </div>

@@ -1,3 +1,4 @@
+import { Contact } from "lucide-react";
 import React from "react";
 
 const ContactHero = () => {
@@ -7,12 +8,9 @@ const ContactHero = () => {
         <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-24 space-y-8">
           {/* Announcement Banner */}
           <div className="flex justify-center">
-            <a
-              className="group inline-block bg-white/[.05] hover:bg-white/[.1] border border-white/[.05] p-1 ps-4 rounded-full shadow-md"
-              href="../figma.html"
-            >
-              <p className="me-2 inline-block text-white text-sm">
-                Preline UI Figma is live.
+            <div className="group inline-block flex  items-center gap-2 bg-white/[.05] hover:bg-white/[.1] border border-white/[.05] p-1 ps-4 rounded-full shadow-md">
+              <p className="me-2 flex  gap-2 items-center text-white text-sm">
+                <Contact /> Contact Us
               </p>
               <span className="group-hover:bg-white/[.1] py-1.5 px-2.5 inline-flex justify-center items-center gap-x-2 rounded-full bg-white/[.075] font-semibold text-white text-sm">
                 <svg
@@ -30,19 +28,23 @@ const ContactHero = () => {
                   />
                 </svg>
               </span>
-            </a>
+            </div>
           </div>
           {/* End Announcement Banner */}
           {/* Title */}
           <div className="max-w-3xl text-center mx-auto">
             <h1 className="block font-medium text-gray-200 text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
-              Now it is easier than ever to build products
+              Contact Us
             </h1>
           </div>
           {/* End Title */}
           <div className="max-w-3xl text-center mx-auto">
             <p className="text-lg text-gray-400">
-            Bionis is a company that specializes in repairing medical equipment. Our team of experts is dedicated to ensuring that your health equipment is in optimal condition. We use the latest technologies and techniques to provide high-quality repairs. Trust Bionis to keep your medical equipment functioning at its best.
+              Binous is a company that specializes in repairing medical
+              equipment. Our team of experts is dedicated to ensuring that your
+              health equipment is in optimal condition. We use the latest
+              technologies and techniques to provide high-quality repairs. Trust
+              Binous to keep your medical equipment functioning at its best.
             </p>
           </div>
           {/* Buttons */}
