@@ -90,7 +90,7 @@ export function Navbar() {
                     What can we help you with today?
                   </h1>
                   <p className="text-sm text-gray-600">
-                    We'll your broken tech fast-with or without a protection
+                    We&apos;ll your broken tech fast-with or without a protection
                     plan
                   </p>
                   <Link

@@ -8,7 +8,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 
-const page = () => {
+const Products = () => {
   const [active, setActive] = useState(1);
 
   return (
@@ -139,4 +139,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Products;
