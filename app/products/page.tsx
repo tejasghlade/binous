@@ -32,7 +32,7 @@ const Products = () => {
             <div
               key={product.id}
               className={`flex flex-col gap-2 bg-gray-50 hover:bg-gray-100 border-gray-200 rounded-2xl items-center text-center p-5 border-2 ${
-                active === product.id ? "border-blue-500 shadow-lg " : ""
+                active === product.id ? "border-blue-400" : ""
               }`}
               onClick={() => setActive(product.id)}
             >

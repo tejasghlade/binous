@@ -77,7 +77,7 @@ export function Navbar() {
          
           <NavigationMenuItem >
             <NavigationMenuTrigger>Products</NavigationMenuTrigger>
-            <NavigationMenuContent  className="items-center">
+            <NavigationMenuContent    className="items-center ">
               <div className="w-[900px] flex gap-8 p-5 rounded-2xl">
                 <div className="flex gap-5 flex-col">
                   <Image
@@ -132,12 +132,12 @@ export function Navbar() {
                       ))
                     }
 
-                    <div className="flex flex-col gap-2 bg-gray-50 hover:bg-gray-100 border-gray-200 rounded-2xl items-center text-center  p-5  border-2 ">
+                    <Link href={'/products'} className="flex flex-col justify-center items-center gap-2 bg-gray-50 hover:bg-gray-100 border-gray-200 rounded-2xl items-center text-center  p-5  border-2 ">
                       <div className="border-2 border-black rounded-full p-2">
                         <MoveRightIcon />
                       </div>
                       <h2>All repair options</h2>
-                    </div>
+                    </Link>
 
                     {/* Add more grid items here */}
                   </div>
