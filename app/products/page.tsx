@@ -9,7 +9,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 
 const Products = () => {
-  const [active, setActive] = useState(1);
+  const [active, setActive] = useState(productList[0].id);
 
   return (
     <div className="mx-32 py-10 lg:py-14">
@@ -31,12 +31,14 @@ const Products = () => {
           {productList.map((product) => (
             <div
               key={product.id}
-              className={`flex flex-col gap-2 bg-gray-50 hover:bg-gray-100 border-gray-200 rounded-2xl items-center text-center p-5 border-2 ${
-                active === product.id ? "border-blue-400" : ""
+              className={`flex flex-col gap-2 cursor-pointer bg-gray-50 hover:bg-gray-100 border-gray-200 rounded-2xl items-center text-center p-5 border-2 ${
+                active === product.id ? "border-gray-600 " : ""
               }`}
-              onClick={() => setActive(product.id)}
+              onClick={() => setActive(product?.id)}
             >
               <div>
+                {active}
+                {product?.id}
                 <Image
                   width={100}
                   height={100}

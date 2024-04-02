@@ -76,6 +76,76 @@ export function Navbar() {
           </NavigationMenuItem>
          
           <NavigationMenuItem >
+            <NavigationMenuTrigger>Repair Services</NavigationMenuTrigger>
+            <NavigationMenuContent    className="items-center ">
+              <div className="w-[900px] flex gap-8 p-5 rounded-2xl">
+                <div className="flex gap-5 flex-col">
+                  <Image
+                    src={"/assets/settings.png"}
+                    width={50}
+                    height={50}
+                    alt={""}
+                  />
+                  <h1 className=" text-2xl">
+                    What can we help you with today?
+                  </h1>
+                  <p className="text-sm text-gray-600">
+                    We&apos;ll your broken tech fast-with or without a protection
+                    plan
+                  </p>
+                  <Link
+                    className="flex gap-2 text-purple-700 underline"
+                    href="/products"
+                    passHref
+                  >
+                    Get started
+                    <MoveRightIcon className="fill-purple-700" />
+                  </Link>
+                </div>
+
+                <div>
+                  <div className="grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 ">
+                    {
+                      // Add a grid item here
+                      productList.slice(0, 5).map((product) => (
+                        <div
+                          key={product.id}
+                          className="flex flex-col gap-2 bg-gray-50 hover:bg-gray-100 border-gray-200 rounded-2xl items-center text-center  p-5  border-2 "
+                        >
+                          <div>
+                            <Image
+                              width={70}
+                              height={70}
+                              src="/assets/products/product.png"
+                              alt="Product Image"
+                            />
+                          </div>
+                          <div>
+                            <h2 className="font-bold hover:underline cursor-pointer">
+                              {product.name}
+                            </h2>
+                            <p className="font-light text-gray-600">
+                              {product.subtitle}
+                            </p>
+                          </div>
+                        </div>
+                      ))
+                    }
+
+                    <Link href={'/products'} className="flex flex-col justify-center items-center gap-2 bg-gray-50 hover:bg-gray-100 border-gray-200 rounded-2xl items-center text-center  p-5  border-2 ">
+                      <div className="border-2 border-black rounded-full p-2">
+                        <MoveRightIcon />
+                      </div>
+                      <h2>All repair options</h2>
+                    </Link>
+
+                    {/* Add more grid items here */}
+                  </div>
+                </div>
+              </div>
+            </NavigationMenuContent>
+          </NavigationMenuItem>
+          <NavigationMenuItem >
             <NavigationMenuTrigger>Products</NavigationMenuTrigger>
             <NavigationMenuContent    className="items-center ">
               <div className="w-[900px] flex gap-8 p-5 rounded-2xl">
@@ -152,13 +222,7 @@ export function Navbar() {
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
-          <NavigationMenuItem>
-            <Link href="/contact" legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                Contact
-              </NavigationMenuLink>
-            </Link>
-          </NavigationMenuItem>
+          
         </NavigationMenuList>
       </NavigationMenu>
       <Link href={'contact'}>

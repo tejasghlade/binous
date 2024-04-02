@@ -15,7 +15,7 @@ export default function Home() {
       <Features />
       <SimpleProductSection /> 
       {/* <ProductsCard /> */}
-      <FeatureNav />
+      {/* <FeatureNav /> */}
       <AccordionComponent />
     </main>
   );
