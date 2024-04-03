@@ -8,7 +8,7 @@ const page = () => {
     <>
       <header className="relative h-[500px] flex items-center justify-center h-screen  overflow-hidden">
         <div className="relative z-30 p-5 text-6xl w-2/3 text-center text-white  bg-opacity-50 rounded-xl">
-          We Don't just fix your tech
+          We Dont just fix your tech
           <br /> we fix your health
         </div>
         <video
